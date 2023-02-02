@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url('/fonts/Beaufort-Regular.woff2') format('woff2'),
+    url('/fonts/Beaufort-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url('/fonts/Beaufort-Bold.woff2') format('woff2'),
+    url('/fonts/Beaufort-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  *,
+  *:before,
+  *:after {
+    font-family: theme('fontFamily.beaufort');
+  }
+}
+
+@layer components {
+  .image-shadow {
+    position: absolute;
+    top: 0;
+    margin-top: calc(var(--offset-top) * -1);
+    margin-left: var(--offset-left);
+    box-shadow: inset 0px 0px 14px 44px theme('colors.primary');
+
+    --offset-top: 35px;
+    --offset-left: -24px;
+  }
+
+  .image-shadow:before {
+    content: '';
+    position: absolute;
+    top: var(--offset-top);
+    height: 50%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 52%, theme('colors.primary') 100%);
+  }
+
+  .image-shadow:after {
+    content: '';
+    position: absolute;
+    top: var(--offset-top);
+    height: 50%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, theme('colors.primary') 0%, transparent 22%);
+  }
+}
