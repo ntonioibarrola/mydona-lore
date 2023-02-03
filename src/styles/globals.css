@@ -21,20 +21,30 @@
 }
 
 @layer base {
-  *,
-  *:before,
-  *:after {
-    font-family: theme('fontFamily.beaufort');
+  html {
+    @apply bg-primary font-beaufort text-offwhite;
+    font-size: 62.5%;
   }
 }
 
 @layer components {
+  .carousel-shadow {
+    position: absolute;
+    top: 0;
+    margin-top: calc(var(--offset-top) * -1);
+    margin-left: var(--offset-left);
+    box-shadow: inset 0px 0px 16px 48px theme('colors.primary');
+
+    --offset-top: 100px;
+    --offset-left: -44px;
+  }
+
   .image-shadow {
     position: absolute;
     top: 0;
     margin-top: calc(var(--offset-top) * -1);
     margin-left: var(--offset-left);
-    box-shadow: inset 0px 0px 14px 44px theme('colors.primary');
+    box-shadow: inset 0px 0px 16px 48px theme('colors.primary');
 
     --offset-top: 35px;
     --offset-left: -24px;
@@ -46,7 +56,7 @@
     top: var(--offset-top);
     height: 50%;
     width: 100%;
-    background-image: linear-gradient(to bottom, transparent 52%, theme('colors.primary') 100%);
+    background-image: linear-gradient(to bottom, transparent 52%, theme('colors.primary') 98%);
   }
 
   .image-shadow:after {
@@ -56,5 +66,18 @@
     height: 50%;
     width: 100%;
     background-image: linear-gradient(to bottom, theme('colors.primary') 0%, transparent 22%);
+  }
+
+  .divider {
+    background: linear-gradient(to right, transparent, theme('colors.accent'), transparent);
+  }
+
+  .glassmorphism {
+    background: hsl(230, 9%, 13% / 0.1);
+    backdrop-filter: blur(0.6rem);
+  }
+
+  .translucent {
+    background: rgba(11, 11, 13, 0.7);
   }
 }
