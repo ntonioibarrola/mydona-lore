@@ -1,6 +1,8 @@
+import { type FC, useCallback, useState, useEffect } from 'react';
+import Image from 'next/image';
 import classNames from 'classnames';
-import { type FC, useCallback, useRef, useState } from 'react';
-import Image from './Image';
+
+const SCROLLBAR_OFFSET = 20; // Make space for scrollbar so we can hide it with overflow hidden
 
 type CarouselProps = {
   height: number;
@@ -9,66 +11,60 @@ type CarouselProps = {
 };
 
 const Carousel: FC<CarouselProps> = ({ height, width, imageSources }) => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const sliderRef = useRef<HTMLUListElement | null>(null);
-  const slideWidth = width;
-  const slideMargin = 12.5;
+  const [activeSlide, setActiveSlide] = useState<number>(0);
 
-  const scrollSlide = useCallback(
-    (slider: HTMLUListElement | null, index: number) => {
-      if (!slider) return;
+  const goToSlide = useCallback((index: number) => {
+    setActiveSlide(index);
+  }, []);
 
-      slider.scrollTo({
-        left: index * (slideWidth + slideMargin),
-        behavior: 'smooth',
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prevActiveSlide: number) => {
+        if (prevActiveSlide === imageSources.length - 1) {
+          return (prevActiveSlide = 0);
+        }
+        return prevActiveSlide + 1;
       });
-    },
-    [slideWidth],
-  );
+    }, 5000);
 
-  const goToSlide = useCallback(
-    (index: number) => {
-      setActiveSlide(index);
-      scrollSlide(sliderRef.current, index);
-    },
-    [scrollSlide],
-  );
+    return () => {
+      clearInterval(interval);
+    };
+  }, [imageSources.length, activeSlide]);
 
   return (
     <div className='relative overflow-hidden' style={{ height: height, width: width }}>
-      <div className='overflow-hidden' style={{ height: height }}>
-        <ul
-          className='flex snap-x snap-mandatory overflow-x-auto scroll-smooth pb-8'
-          style={{ height: height + 20 }}
-          ref={sliderRef}
-        >
-          {imageSources.map((source, index) => (
-            <li className='mr-5 snap-start snap-always last:mr-0' key={`Profile Image ${index}`}>
-              <Image
-                className='object-cover'
-                src={source}
-                height={height}
-                width={width}
-                alt='Ramallene Yules - Profile Image'
-                shadow
-              />
-            </li>
-          ))}
-          <div className='absolute top-0 h-[45rem] w-[27.5rem] overflow-hidden'>
-            <span className='image-shadow h-[200%] w-[calc(100%_+_50px)]' />
-          </div>
-        </ul>
-      </div>
+      <ul className='flex pb-8' style={{ height: height + SCROLLBAR_OFFSET }}>
+        {imageSources.map((source, index) => (
+          <li
+            key={`Profile Image ${index}`}
+            className={classNames(
+              'absolute transition-opacity duration-500',
+              activeSlide === index ? 'opacity-100' : 'opacity-0',
+            )}
+          >
+            <Image
+              className='object-cover'
+              style={{ height: height, width: width }}
+              src={source}
+              height={height}
+              width={width}
+              alt='Ramallene Yules - Profile Image'
+            />
+          </li>
+        ))}
+        <span className='image-shadow' />
+      </ul>
       <div className='glassmorphism absolute bottom-0 h-28 w-full'>
-        <div className='relative bottom-2 flex h-full w-full items-center justify-center gap-x-5'>
+        <div className='relative bottom-2 flex h-full w-full items-center justify-center gap-x-4'>
           {imageSources.map((_, index) => (
             <div
               key={`Profile Button ${index}`}
               className={classNames(
                 'cursor-pointer rounded-full transition-transform',
                 activeSlide === index
-                  ? 'h-2 w-2 scale-175 bg-subaccent shadow-[0px_0px_0px_3px_#dddddd24]'
-                  : 'h-[0.7rem] w-[0.7rem] bg-zinc-600',
+                  ? 'relative h-[7px] w-[7px] scale-110 bg-subaccent before:absolute before:-left-[2px] before:-top-[2px] before:h-[11px] before:w-[11px] before:rounded-full before:border-1 before:border-solid before:border-triaccent'
+                  : 'h-[7px] w-[7px] bg-zinc-600',
               )}
               onClick={() => goToSlide(index)}
               role='button'

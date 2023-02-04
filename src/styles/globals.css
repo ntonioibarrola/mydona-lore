@@ -28,26 +28,18 @@
 }
 
 @layer components {
-  .carousel-shadow {
-    position: absolute;
-    top: 0;
-    margin-top: calc(var(--offset-top) * -1);
-    margin-left: var(--offset-left);
-    box-shadow: inset 0px 0px 16px 48px theme('colors.primary');
-
-    --offset-top: 100px;
-    --offset-left: -44px;
-  }
-
   .image-shadow {
     position: absolute;
     top: 0;
     margin-top: calc(var(--offset-top) * -1);
     margin-left: var(--offset-left);
+    height: 200%;
+    width: calc(100% + var(--offset-width));
     box-shadow: inset 0px 0px 16px 48px theme('colors.primary');
 
+    --offset-width: 50px;
     --offset-top: 35px;
-    --offset-left: -24px;
+    --offset-left: -25px;
   }
 
   .image-shadow:before {
