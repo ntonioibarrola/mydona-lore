@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { type NextPage } from 'next';
 import Head from 'next/head';
 import BackgroundCover from '../components/BackgroundCover';
@@ -9,6 +10,10 @@ import * as Typography from '../components/Typography';
 import RamalleneYulesJson from '../data/RamalleneYules.json';
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+  }, []);
+
   return (
     <>
       <Head>
@@ -16,18 +21,11 @@ const Home: NextPage = () => {
         <meta name='description' content='' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <header className='glassmorphism fixed z-10 w-screen'>
-        <Container>
-          <Navbar />
-        </Container>
+      <header>
+        <Navbar />
       </header>
       <main>
-        <section
-          style={{
-            maskImage: 'linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0))',
-            WebkitMaskImage: 'linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0))',
-          }}
-        >
+        <section>
           <BackgroundCover
             imageSource='/images/Alexstrasza1.png'
             positionX={67.4897}
@@ -35,7 +33,7 @@ const Home: NextPage = () => {
           />
         </section>
         <section className='relative bg-primary'>
-          <div className='absolute -top-14 mx-auto w-full px-20 text-center sm:-top-24'>
+          <div className='absolute -top-32 mx-auto w-full px-20 text-center sm:-top-60'>
             <h1 className='font-serif font-bold leading-[1.1] tracking-[0.15em] fluid-text-8xl'>
               Ramallene Yules
             </h1>
@@ -44,8 +42,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <Container>
-            <div className='h-40' />
-            <div className='grid px-10 sm:grid-cols-[1fr_275px]'>
+            <div className='grid px-10 py-20 sm:grid-cols-[1fr_275px] sm:py-0'>
               <div className='order-1 sm:order-2 sm:col-start-2 sm:col-end-3'>
                 <Profile />
               </div>

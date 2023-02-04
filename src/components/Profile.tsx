@@ -7,6 +7,8 @@ import PocketWatchIcon from '../../public/svgs/Pocket-Watch.svg';
 import VisoredHelmIcon from '../../public/svgs/Visored-Helm.svg';
 import RamalleneYulesJson from '../data/RamalleneYules.json';
 
+type InfoKey = 'gender' | 'birth' | 'age' | 'race' | 'occupation' | 'status';
+
 const Profile = () => {
   const info = {
     gender: <CharacterIcon />,
@@ -16,7 +18,6 @@ const Profile = () => {
     occupation: <VisoredHelmIcon />,
     status: <HeartBeatIcon />,
   };
-  type InfoKey = 'gender' | 'birth' | 'age' | 'race' | 'occupation' | 'status';
 
   const imageSources = ['/images/Alexstrasza1.png', '/images/Alexstrasza2.png'];
 

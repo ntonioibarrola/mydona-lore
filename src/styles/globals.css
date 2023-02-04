@@ -25,14 +25,17 @@
     @apply bg-primary font-beaufort text-offwhite;
     font-size: 62.5%;
   }
+
+  body {
+    @apply animate-fade;
+  }
 }
 
 @layer components {
   .image-shadow {
     position: absolute;
-    top: 0;
-    margin-top: calc(var(--offset-top) * -1);
-    margin-left: var(--offset-left);
+    top: calc(var(--offset-top) * -1);
+    left: var(--offset-left);
     height: 200%;
     width: calc(100% + var(--offset-width));
     box-shadow: inset 0px 0px 16px 48px theme('colors.primary');
@@ -64,7 +67,7 @@
     background: linear-gradient(to right, transparent, theme('colors.accent'), transparent);
   }
 
-  .glassmorphism {
+  .glass {
     background: hsl(230, 9%, 13% / 0.1);
     backdrop-filter: blur(0.6rem);
   }

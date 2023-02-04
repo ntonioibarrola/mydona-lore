@@ -20,6 +20,21 @@ module.exports = {
       scale: {
         175: '1.75',
       },
+      animation: {
+        fade: 'fade 700ms cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      keyframes: {
+        fade: {
+          '0%': {
+            background: '#0c0b0d',
+            opacity: 0,
+          },
+          '100%': {
+            background: '#0c0b0d',
+            opacity: 100,
+          },
+        },
+      },
     },
     fontSize: {
       xs: '1.15rem',

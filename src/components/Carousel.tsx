@@ -55,7 +55,7 @@ const Carousel: FC<CarouselProps> = ({ height, width, imageSources }) => {
         ))}
         <span className='image-shadow' />
       </ul>
-      <div className='glassmorphism absolute bottom-0 h-28 w-full'>
+      <div className='glass absolute bottom-0 h-28 w-full'>
         <div className='relative bottom-2 flex h-full w-full items-center justify-center gap-x-4'>
           {imageSources.map((_, index) => (
             <div
