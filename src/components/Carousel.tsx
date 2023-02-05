@@ -1,6 +1,7 @@
 import { type FC, useCallback, useState, useEffect } from 'react';
 import Image from 'next/image';
 import classNames from 'classnames';
+import RadioGroup from '@ui/RadioGroup';
 
 const SCROLLBAR_OFFSET = 20; // Make space for scrollbar so we can hide it with overflow hidden
 
@@ -21,7 +22,7 @@ const Carousel: FC<CarouselProps> = ({ height, width, imageSources }) => {
     const interval = setInterval(() => {
       setActiveSlide((prevActiveSlide: number) => {
         if (prevActiveSlide === imageSources.length - 1) {
-          return (prevActiveSlide = 0);
+          return 0;
         }
         return prevActiveSlide + 1;
       });
@@ -56,20 +57,12 @@ const Carousel: FC<CarouselProps> = ({ height, width, imageSources }) => {
         <span className='image-shadow' />
       </ul>
       <div className='glass absolute bottom-0 h-28 w-full'>
-        <div className='relative bottom-2 flex h-full w-full items-center justify-center gap-x-4'>
-          {imageSources.map((_, index) => (
-            <div
-              key={`Profile Button ${index}`}
-              className={classNames(
-                'cursor-pointer rounded-full transition-transform',
-                activeSlide === index
-                  ? 'relative h-[7px] w-[7px] scale-110 bg-subaccent before:absolute before:-left-[2px] before:-top-[2px] before:h-[11px] before:w-[11px] before:rounded-full before:border-1 before:border-solid before:border-triaccent'
-                  : 'h-[7px] w-[7px] bg-zinc-600',
-              )}
-              onClick={() => goToSlide(index)}
-              role='button'
-            />
-          ))}
+        <div className='relative bottom-2 flex h-full w-full items-center justify-center'>
+          <RadioGroup
+            currentValue={activeSlide}
+            length={imageSources.length}
+            handleChange={goToSlide}
+          />
         </div>
       </div>
     </div>

@@ -27,17 +27,17 @@ const Home: NextPage = () => {
       <main>
         <section>
           <BackgroundCover
-            imageSource='/images/Alexstrasza1.png'
-            positionX={67.4897}
+            imageSource='/images/Alexstrasza3.png'
+            positionX={60.4897}
             positionY={14.6444}
           />
         </section>
-        <section className='relative bg-primary'>
+        <section className='relative bg-theme-background-neutral'>
           <div className='absolute -top-32 mx-auto w-full px-20 text-center sm:-top-60'>
             <h1 className='font-serif font-bold leading-[1.1] tracking-[0.15em] fluid-text-8xl'>
               Ramallene Yules
             </h1>
-            <p className='font-bold tracking-[0.2em] text-accent fluid-text-lg'>
+            <p className='font-bold tracking-[0.2em] text-theme-text-primary fluid-text-lg'>
               SCORN OF THE EXILED
             </p>
           </div>

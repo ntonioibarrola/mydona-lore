@@ -28,8 +28,8 @@ const Profile = () => {
         {Object.entries(RamalleneYulesJson.basic).map(([key, value]) => (
           <div key={key} className='flex justify-between leading-[1.8] tracking-widest'>
             <span className='flex items-center gap-x-2'>
-              <span className='h-7 w-7'>{info[key as InfoKey]}</span>
-              <span className='text-xs text-subaccent'>{`${key.toUpperCase()}: `}</span>
+              <span className='h-7 w-7 text-theme-text-primary'>{info[key as InfoKey]}</span>
+              <span className='text-xs text-theme-text-secondary'>{`${key.toUpperCase()}: `}</span>
             </span>
             <span className='text-xs'>{value}</span>
           </div>

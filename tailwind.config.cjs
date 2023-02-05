@@ -7,11 +7,22 @@ module.exports = {
         1: '1px',
       },
       colors: {
-        primary: '#0c0b0d',
-        offwhite: '#d8d6ca',
-        accent: '#c8aa6e',
-        subaccent: 'rgb(196, 185, 152)',
-        triaccent: 'rgb(138, 108, 60)',
+        theme: {
+          background: {
+            neutral: 'var(--theme-background-neutral)',
+            primary: 'var(--theme-background-primary)',
+          },
+          button: {
+            border: 'var(--theme-button-border)',
+            active: 'var(--theme-button-active)',
+            disabled: 'var(--theme-button-disabled)',
+          },
+          text: {
+            neutral: 'var(--theme-text-neutral)',
+            primary: 'var(--theme-text-primary)',
+            secondary: 'var(--theme-text-secondary)',
+          },
+        },
       },
       fontFamily: {
         beaufort: ['Beaufort', 'san-serif'],
@@ -26,11 +37,11 @@ module.exports = {
       keyframes: {
         fade: {
           '0%': {
-            background: '#0c0b0d',
+            background: 'var(--theme-background-neutral)',
             opacity: 0,
           },
           '100%': {
-            background: '#0c0b0d',
+            background: 'var(--theme-background-neutral)',
             opacity: 100,
           },
         },
@@ -53,6 +64,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('tailwindcss-radix')({ variantPrefix: 'ui' }),
     require('tailwindcss-fluid-type')({
       settings: {
         fontSizeMin: 1,
