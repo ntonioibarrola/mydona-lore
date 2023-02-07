@@ -7,12 +7,19 @@ import Divider from '../components/Divider';
 import Navbar from '../components/Navbar';
 import Profile from '../components/Profile';
 import * as Typography from '../components/Typography';
+import useTheme from '../hooks/useTheme';
 import RamalleneYulesJson from '../data/RamalleneYules.json';
 
 const Home: NextPage = () => {
+  const [theme, setTheme] = useTheme();
+
   useEffect(() => {
     window.history.scrollRestoration = 'manual';
   }, []);
+
+  useEffect(() => {
+    theme === 'dark' ? setTheme('dark') : setTheme('light');
+  }, [theme, setTheme]);
 
   return (
     <>
@@ -25,15 +32,15 @@ const Home: NextPage = () => {
         <Navbar />
       </header>
       <main>
-        <section>
+        <section className='bg-transparent'>
           <BackgroundCover
             imageSource='/images/Alexstrasza3.png'
             positionX={60.4897}
             positionY={14.6444}
           />
         </section>
-        <section className='relative bg-theme-background-neutral'>
-          <div className='absolute -top-32 mx-auto w-full px-20 text-center sm:-top-60'>
+        <section className='relative bg-red-500 dark:bg-theme-background-neutral'>
+          <div className='absolute -top-32 mx-auto w-full px-20 text-center sm:-top-52'>
             <h1 className='font-serif font-bold leading-[1.1] tracking-[0.15em] fluid-text-8xl'>
               Ramallene Yules
             </h1>
@@ -42,7 +49,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <Container>
-            <div className='grid px-10 py-20 sm:grid-cols-[1fr_275px] sm:py-0'>
+            <div className='grid px-10 py-20 sm:grid-cols-[1fr_275px] sm:py-5'>
               <div className='order-1 sm:order-2 sm:col-start-2 sm:col-end-3'>
                 <Profile />
               </div>
