@@ -8,6 +8,30 @@ module.exports = {
         1: '1px',
       },
       colors: {
+        neutral: {
+          50: 'rgba(var(--color-neutral-50), 1)',
+          100: 'rgba(var(--color-neutral-100), 1)',
+          200: 'rgba(var(--color-neutral-200), 1)',
+          300: 'rgba(var(--color-neutral-300), 1)',
+          400: 'rgba(var(--color-neutral-400), 1)',
+          500: 'rgba(var(--color-neutral-500), 1)',
+          600: 'rgba(var(--color-neutral-600), 1)',
+          700: 'rgba(var(--color-neutral-700), 1)',
+          800: 'rgba(var(--color-neutral-800), 1)',
+          900: 'rgba(var(--color-neutral-900), 1)',
+        },
+        primary: {
+          50: 'rgba(var(--color-primary-50), 1)',
+          300: 'rgba(var(--color-primary-300), 1)',
+          400: 'rgba(var(--color-primary-400), 1)',
+          500: 'rgba(var(--color-primary-500), 1)',
+          600: 'rgba(var(--color-primary-600), 1)',
+          700: 'rgba(var(--color-primary-700), 1)',
+          200: 'rgba(var(--color-primary-200), 1)',
+          800: 'rgba(var(--color-primary-800), 1)',
+          900: 'rgba(var(--color-primary-900), 1)',
+          100: 'rgba(var(--color-primary-100), 1)',
+        },
         theme: {
           background: {
             neutral: 'var(--theme-background-neutral)',
@@ -46,6 +70,13 @@ module.exports = {
             opacity: 100,
           },
         },
+      },
+      transitionDuration: {
+        400: '400ms',
+        800: '800ms',
+      },
+      transitionTimingFunction: {
+        ease: 'ease',
       },
     },
     fontSize: {
@@ -91,7 +122,7 @@ module.exports = {
         '6xl': [7, 1.1],
         '7xl': [8, 1],
         '8xl': [9, 1],
-        '9xl': [10, 1],
+        '9xl': [11, 1],
       },
     }),
   ],

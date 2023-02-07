@@ -9,6 +9,7 @@ import Profile from '../components/Profile';
 import * as Typography from '../components/Typography';
 import useTheme from '../hooks/useTheme';
 import RamalleneYulesJson from '../data/RamalleneYules.json';
+import Title from '../components/Title';
 
 const Home: NextPage = () => {
   const [theme, setTheme] = useTheme();
@@ -32,24 +33,17 @@ const Home: NextPage = () => {
         <Navbar />
       </header>
       <main>
-        <section className='bg-transparent'>
+        <section>
           <BackgroundCover
-            imageSource='/images/Alexstrasza3.png'
-            positionX={60.4897}
+            imageSource='/images/poppy.jpg'
+            positionX={71.4897}
             positionY={14.6444}
           />
+          <Title />
         </section>
         <section className='relative bg-red-500 dark:bg-theme-background-neutral'>
-          <div className='absolute -top-32 mx-auto w-full px-20 text-center sm:-top-52'>
-            <h1 className='font-serif font-bold leading-[1.1] tracking-[0.15em] fluid-text-8xl'>
-              Ramallene Yules
-            </h1>
-            <p className='font-bold tracking-[0.2em] text-theme-text-primary fluid-text-lg'>
-              SCORN OF THE EXILED
-            </p>
-          </div>
           <Container>
-            <div className='grid px-10 py-20 sm:grid-cols-[1fr_275px] sm:py-5'>
+            <div className='grid py-20 px-10 sm:grid-cols-[1fr_275px] sm:py-5'>
               <div className='order-1 sm:order-2 sm:col-start-2 sm:col-end-3'>
                 <Profile />
               </div>
