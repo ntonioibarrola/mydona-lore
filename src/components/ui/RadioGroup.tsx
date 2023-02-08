@@ -19,11 +19,11 @@ const RadioGroup: FC<RadioGroupProps> = ({ currentValue, length, handleChange })
       {values.map((value, index) => (
         <RadixRadioGroup.Item
           key={`radio-${index}`}
-          className='relative h-[7px] w-[7px] cursor-pointer rounded-full ui-state-checked:bg-theme-button-active ui-state-unchecked:bg-theme-button-disabled'
+          className='relative h-[7px] w-[7px] cursor-pointer rounded-full ui-state-checked:bg-primary-300 ui-state-unchecked:bg-neutral-600'
           value={value}
         >
           <RadixRadioGroup.Indicator
-            className='absolute -left-[2px] -top-[2px] h-[11px] w-[11px] rounded-full border-1 border-solid border-theme-button-border transition-transform ui-state-checked:scale-110 ui-state-unchecked:scale-0'
+            className='absolute -left-[2px] -top-[2px] h-[11px] w-[11px] rounded-full border-1 border-solid border-primary-800 transition-transform ui-state-checked:scale-110 ui-state-unchecked:scale-0'
             forceMount
           />
         </RadixRadioGroup.Item>

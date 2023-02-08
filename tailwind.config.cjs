@@ -50,7 +50,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        beaufort: ['Beaufort', 'san-serif'],
+        beaufort: ['Beaufort', 'serif'],
+        spiegel: ['Spiegel', 'serif'],
         serif: ['serif'],
       },
       scale: {
@@ -62,11 +63,11 @@ module.exports = {
       keyframes: {
         fade: {
           '0%': {
-            background: 'var(--theme-background-neutral)',
+            background: 'rgb(var(--color-neutral-900))',
             opacity: 0,
           },
           '100%': {
-            background: 'var(--theme-background-neutral)',
+            background: 'rgb(var(--color-neutral-900))',
             opacity: 100,
           },
         },
@@ -122,7 +123,7 @@ module.exports = {
         '6xl': [7, 1.1],
         '7xl': [8, 1],
         '8xl': [9, 1],
-        '9xl': [11, 1],
+        '9xl': [10, 1],
       },
     }),
   ],

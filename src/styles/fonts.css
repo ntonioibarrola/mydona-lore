@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Beaufort';
+  src: url('/fonts/Beaufort-Regular.woff2') format('woff2'),
+    url('/fonts/Beaufort-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Beaufort';
+  src: url('/fonts/Beaufort-Bold.woff2') format('woff2'),
+    url('/fonts/Beaufort-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('/fonts/Spiegel-Regular.woff2') format('woff2'),
+    url('/fonts/Spiegel-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('/fonts/Spiegel-Regular-Italic.woff2') format('woff2'),
+    url('/fonts/Spiegel-Regular-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('/fonts/Spiegel-Semibold.woff2') format('woff2'),
+    url('/fonts/Spiegel-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('/fonts/Spiegel-Semibold-Italic.woff2') format('woff2'),
+    url('/fonts/Spiegel-Semibold-Italic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('/fonts/Spiegel-Bold.woff2') format('woff2'),
+    url('/fonts/Spiegel-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spiegel';
+  src: url('/fonts/Spiegel-Bold-Italic.woff2') format('woff2'),
+    url('/fonts/Spiegel-Bold-Italic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}

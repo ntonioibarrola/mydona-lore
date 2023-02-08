@@ -7,6 +7,16 @@ const config = {
     locales: ['en'],
     defaultLocale: 'en',
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'https://mydona-lore.vercel.app/',
+        port: '',
+        pathname: '/images/**',
+      },
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
