@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { type NextPage } from 'next';
 import Head from 'next/head';
-import useTheme from '../hooks/useTheme';
+import Fade from '../components/Fade';
 import * as Character from '../components/CharacterPage';
+import useTheme from '../hooks/useTheme';
 
 const Home: NextPage = () => {
   const [theme, setTheme] = useTheme();
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
         <meta name='description' content='' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='pointer-events-none fixed z-50 h-full w-full animate-fade bg-neutral-50 dark:bg-neutral-900' />
+      <Fade />
       <Character.Header />
       <Character.Main />
       <Character.Footer />

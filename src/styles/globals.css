@@ -32,12 +32,8 @@
   }
 
   html {
-    @apply bg-shadow font-beaufort;
+    @apply relative bg-shadow font-beaufort;
     font-size: 62.5%;
-  }
-
-  body {
-    @apply relative;
   }
 }
 

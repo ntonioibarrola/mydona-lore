@@ -42,19 +42,6 @@ module.exports = {
       scale: {
         175: '1.75',
       },
-      animation: {
-        fade: 'fade 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards',
-      },
-      keyframes: {
-        fade: {
-          '0%': {
-            opacity: 100,
-          },
-          '100%': {
-            opacity: 0,
-          },
-        },
-      },
       transitionDuration: {
         400: '400ms',
         800: '800ms',
