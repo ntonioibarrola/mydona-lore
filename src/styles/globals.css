@@ -6,16 +6,16 @@
 
 @layer base {
   :root {
-    --color-neutral-50: 216, 214, 202;
-    --color-neutral-100: 194, 192, 181;
-    --color-neutral-200: 172, 171, 161;
-    --color-neutral-300: 151, 149, 141;
-    --color-neutral-400: 129, 128, 121;
-    --color-neutral-500: 108, 107, 101;
-    --color-neutral-600: 86, 85, 80;
-    --color-neutral-700: 64, 64, 60;
-    --color-neutral-800: 43, 42, 40;
-    --color-neutral-900: 13, 12, 14;
+    --color-neutral-50: 238, 239, 239;
+    --color-neutral-100: 231, 231, 227;
+    --color-neutral-200: 224, 223, 215;
+    --color-neutral-300: 212, 210, 198;
+    --color-neutral-400: 182, 180, 171;
+    --color-neutral-500: 148, 146, 140;
+    --color-neutral-600: 114, 112, 109;
+    --color-neutral-700: 80, 78, 78;
+    --color-neutral-800: 46, 44, 47;
+    --color-neutral-900: 19, 19, 25;
 
     --color-primary-50: 216, 214, 202;
     --color-primary-100: 209, 204, 185;
@@ -27,15 +27,17 @@
     --color-primary-700: 158, 128, 78;
     --color-primary-800: 137, 108, 61;
     --color-primary-900: 107, 82, 30;
+
+    --color-shadow: 13, 12, 14;
   }
 
   html {
-    @apply bg-neutral-900 font-beaufort;
+    @apply bg-shadow font-beaufort;
     font-size: 62.5%;
   }
 
   body {
-    @apply animate-fade;
+    @apply relative;
   }
 }
 

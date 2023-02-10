@@ -7,6 +7,7 @@ import PocketWatchIcon from '../../public/svgs/Pocket-Watch.svg';
 import VisoredHelmIcon from '../../public/svgs/Visored-Helm.svg';
 import RamalleneYulesJson from '../data/RamalleneYules.json';
 import classNames from 'classnames';
+import Paragraph from '@typography/Paragraph';
 
 type InfoKey = 'gender' | 'birth' | 'age' | 'race' | 'occupation' | 'status';
 
@@ -22,10 +23,8 @@ const Profile = () => {
 
   const imageSources = ['/images/Alexstrasza1.png', '/images/Alexstrasza2.png'];
 
-  const darkIcon = 'dark:text-primary-500';
-  const lightIcon = 'text-primary-700';
-  const darkText = 'dark:text-primary-300';
-  const lightText = 'text-primary-800';
+  const darkIcon = 'dark:text-primary-300';
+  const lightIcon = 'text-primary-600';
 
   return (
     <div className='relative grid justify-center sm:justify-end'>
@@ -37,11 +36,13 @@ const Profile = () => {
               <span className={classNames('h-7 w-7', darkIcon, lightIcon)}>
                 {info[key as InfoKey]}
               </span>
-              <span className={classNames('text-xs', darkText, lightText)}>
+              <Paragraph variant='secondary' weight='bold'>
                 {`${key.toUpperCase()}: `}
-              </span>
+              </Paragraph>
             </span>
-            <span className={classNames('text-sm', darkText, lightText)}>{value}</span>
+            <Paragraph variant='secondary' weight='medium'>
+              {value}
+            </Paragraph>
           </div>
         ))}
       </div>

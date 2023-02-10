@@ -22,6 +22,7 @@ const Home: NextPage = () => {
         <meta name='description' content='' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <div className='pointer-events-none fixed z-50 h-full w-full animate-fade bg-neutral-50 dark:bg-neutral-900' />
       <Character.Header />
       <Character.Main />
       <Character.Footer />

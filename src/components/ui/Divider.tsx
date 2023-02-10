@@ -4,9 +4,12 @@ import type { FC } from 'react';
 const divider = cva('h-[1px]', {
   variants: {
     variant: {
-      solid: 'dark:bg-primary-500 bg-primary-800',
+      solid: 'dark:bg-primary-500 bg-primary-700',
       gradient:
         'dark:bg-[linear-gradient(to_right,transparent,rgb(var(--color-primary-500)),transparent)] bg-[linear-gradient(to_right,transparent,rgb(var(--color-primary-800)),transparent)]',
+    },
+    center: {
+      true: 'mx-auto',
     },
     fullWidth: {
       true: 'w-full',
@@ -18,11 +21,12 @@ const divider = cva('h-[1px]', {
 
 interface DividerProps extends VariantProps<typeof divider> {
   variant: 'solid' | 'gradient';
+  center?: boolean;
   fullWidth?: boolean;
 }
 
-export const Divider: FC<DividerProps> = ({ variant, fullWidth }) => {
-  return <div className={divider({ variant, fullWidth })} />;
+export const Divider: FC<DividerProps> = ({ variant, center, fullWidth }) => {
+  return <div className={divider({ variant, center, fullWidth })} />;
 };
 
 export default Divider;

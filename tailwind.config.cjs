@@ -32,22 +32,7 @@ module.exports = {
           900: 'rgba(var(--color-primary-900), 1)',
           100: 'rgba(var(--color-primary-100), 1)',
         },
-        theme: {
-          background: {
-            neutral: 'var(--theme-background-neutral)',
-            primary: 'var(--theme-background-primary)',
-          },
-          button: {
-            border: 'var(--theme-button-border)',
-            active: 'var(--theme-button-active)',
-            disabled: 'var(--theme-button-disabled)',
-          },
-          text: {
-            neutral: 'var(--theme-text-neutral)',
-            primary: 'var(--theme-text-primary)',
-            secondary: 'var(--theme-text-secondary)',
-          },
-        },
+        shadow: 'rgba(var(--color-shadow), 1)',
       },
       fontFamily: {
         beaufort: ['Beaufort', 'serif'],
@@ -58,17 +43,15 @@ module.exports = {
         175: '1.75',
       },
       animation: {
-        fade: 'fade 700ms cubic-bezier(0.4, 0, 0.2, 1)',
+        fade: 'fade 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards',
       },
       keyframes: {
         fade: {
           '0%': {
-            background: 'rgb(var(--color-neutral-900))',
-            opacity: 0,
+            opacity: 100,
           },
           '100%': {
-            background: 'rgb(var(--color-neutral-900))',
-            opacity: 100,
+            opacity: 0,
           },
         },
       },

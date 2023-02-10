@@ -19,9 +19,9 @@ const BackgroundCover: FC<BackgroundCoverProps> = ({ imageSource, positionX, pos
   const translateY = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
 
   const darkBefore =
-    'before:bg-[linear-gradient(180deg,rgba(var(--color-neutral-900),0)_0%,rgba(var(--color-neutral-900),0.04)_18%,rgba(var(--color-neutral-900),0.14)_34%,rgba(var(--color-neutral-900),0.29)_48%,rgba(var(--color-neutral-900),0.58)_88%,rgba(var(--color-neutral-900),1)_100%)]';
+    'before:bg-[linear-gradient(180deg,rgba(var(--color-shadow),0)_0%,rgba(var(--color-shadow),0.04)_18%,rgba(var(--color-shadow),0.14)_34%,rgba(var(--color-shadow),0.29)_48%,rgba(var(--color-shadow),0.58)_88%,rgba(var(--color-shadow),1)_100%)]';
   const darkAfter =
-    'after:bg-[linear-gradient(180deg,rgba(var(--color-neutral-900),0)_75%,rgba(var(--color-neutral-900),0.1)_80%,rgba(var(--color-neutral-900),1)_100%)]';
+    'after:bg-[linear-gradient(180deg,rgba(var(--color-shadow),0)_75%,rgba(var(--color-shadow),0.1)_80%,rgba(var(--color-shadow),1)_100%)]';
 
   const before = classNames(
     'before:absolute before:bottom-0 before:h-full before:w-full',

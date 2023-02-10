@@ -7,7 +7,11 @@ interface ContainerProps {
 }
 
 export const Container: FC<ContainerProps> = ({ children, className }) => {
-  return <div className={classNames('mx-auto max-w-[83rem]', className)}>{children}</div>;
+  return (
+    <div className={classNames('pointer-events-auto mx-auto max-w-[83rem]', className)}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;
