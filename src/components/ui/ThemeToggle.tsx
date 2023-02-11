@@ -8,7 +8,7 @@ const ButtonTheme: FC = () => {
 
   return (
     <button
-      className='relative h-16 w-16 rounded-full border-1 border-solid border-theme-text-neutral text-theme-text-neutral'
+      className='relative h-16 w-16 rounded-full border-1 border-solid border-neutral-50 text-neutral-50 shadow-2xl shadow-shadow'
       onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}
     >
       <div className='absolute inset-0 h-full w-full p-2 opacity-0 transition-opacity duration-300 dark:opacity-100'>
