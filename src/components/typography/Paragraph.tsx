@@ -6,7 +6,7 @@ const paragraph = cva('whitespace-pre-line text-base', {
     variant: {
       default: 'dark:text-neutral-300 text-neutral-900',
       primary: 'dark:text-primary-500 text-primary-700',
-      secondary: 'dark:text-primary-300 text-primary-600',
+      secondary: 'dark:text-primary-400 text-primary-600',
     },
     alignment: {
       center: 'text-center',
@@ -52,7 +52,6 @@ interface ParagraphProps extends VariantProps<typeof paragraph> {
   spread?: 'tight' | 'normal' | 'wide';
   italic?: boolean;
   uppercase?: boolean;
-  breaks?: boolean;
 }
 
 const Paragraph: FC<ParagraphProps> = ({
@@ -64,13 +63,10 @@ const Paragraph: FC<ParagraphProps> = ({
   spread,
   italic,
   uppercase,
-  breaks,
 }) => {
   return (
     <p className={paragraph({ variant, alignment, size, weight, spread, italic, uppercase })}>
-      {breaks && <br />}
       {children}
-      {breaks && <br />}
     </p>
   );
 };

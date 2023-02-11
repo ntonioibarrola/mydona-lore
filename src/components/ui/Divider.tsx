@@ -4,7 +4,7 @@ import type { FC } from 'react';
 const divider = cva('h-[1px]', {
   variants: {
     variant: {
-      solid: 'dark:bg-primary-500 bg-primary-700',
+      solid: 'dark:bg-primary-600 bg-primary-700',
       gradient:
         'dark:bg-[linear-gradient(to_right,transparent,rgb(var(--color-primary-500)),transparent)] bg-[linear-gradient(to_right,transparent,rgb(var(--color-primary-800)),transparent)]',
     },
